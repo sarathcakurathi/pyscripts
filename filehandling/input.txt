@@ -1,0 +1,6 @@
+I am writing something
+in multiple lines
+to count number of words
+in this input files
+this problem can solve be solved in multiple ways
+but I am just using something in my code to get count of words
