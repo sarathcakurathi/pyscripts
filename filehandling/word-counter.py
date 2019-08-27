@@ -18,3 +18,13 @@ for line in lines:
 print(words) # Print dict having word as key and value as occurrence 
 print(words.values(), type(words.values())) # Type: dict_values()
 print(sum(words.values()))
+
+# Solving word count using dict comprehension
+fh = open("input.txt")
+
+content = fh.read()
+words_list = content.replace("\n", " ").split(' ')
+words_dict = {word:words_list.count(word) for word in words_list}
+print(words_dict)
+print(words_dict == words, id(words), id(words_dict)) # Both dicts are equal
+
