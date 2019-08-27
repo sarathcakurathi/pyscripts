@@ -1,5 +1,7 @@
 #!/bin/python
 
+from collections import Counter
+
 # This program will print occurrence of each distinct word in a file
 fh = open("input.txt")
 
@@ -22,9 +24,15 @@ print(sum(words.values()))
 # Solving word count using dict comprehension
 fh = open("input.txt")
 
-content = fh.read()
-words_list = content.replace("\n", " ").split(' ')
-words_dict = {word:words_list.count(word) for word in words_list}
+content = fh.read().split()
+words_dict = {word:content.count(word) for word in content}
 print(words_dict)
 print(words_dict == words, id(words), id(words_dict)) # Both dicts are equal
+
+# Solvind word count using collections.Counter()
+fh = open("input.txt")
+
+word_count = Counter(fh.read().split()) # Returns a collections.Counter object
+print(word_count, type(word_count))
+print(dict(word_count)) # Get dict from collections.Counter
 
